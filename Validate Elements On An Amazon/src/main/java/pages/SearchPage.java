@@ -56,8 +56,8 @@ public class SearchPage {
        wait.until(ExpectedConditions.visibilityOf(searchBox));
        String preUrl = driver.getCurrentUrl();
        searchBox.click();
-      // String productId = System.getenv("searchProductID");
-       searchBox.sendKeys("GL-D201APZU");
+       String productId = System.getenv("searchProductID");
+       searchBox.sendKeys(productId);
        searchButton.click();
        return (verifyNewPageLoading(preUrl));
    }
