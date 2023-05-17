@@ -48,7 +48,7 @@ public class SearchPage {
     }
 
     public boolean verifyNewPageLoading(String preUrl) {
-        wait.until(ExpectedConditions.visibilityOfAllElements(logo)); 
+        wait.until(ExpectedConditions.visibilityOf(logo));
         return !preUrl.equals(driver.getCurrentUrl());
     }
 
