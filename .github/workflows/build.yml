@@ -1,0 +1,38 @@
+name: Run Code
+
+on:
+
+ workflow_dispatch:
+     inputs:
+      product_id:
+        description: 'The Id searched product'
+        required: true
+        default: "GL-D201APZU"
+ push:
+
+    branches:
+
+      - main
+
+jobs:
+
+  shivam_product:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Shivam code
+
+      uses: actions/checkout@v2
+
+    - name: Set Product ID
+
+      run: echo "searchProductID=${{ inputs.product_id }}" >> $GITHUB_ENV
+
+    - name: Run Selenium Tests
+
+      run: |
+        cd Validate\ Elements\ On\ An\ Amazon
+        mvn test -DsearchProductID="${{ env.searchProductID }}"
+
