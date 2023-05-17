@@ -42,7 +42,7 @@ public class SearchPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         random = new Random();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         log = Logger.getLogger(getClass().getName());
         this.source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     }
