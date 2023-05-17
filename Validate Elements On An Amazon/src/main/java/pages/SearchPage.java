@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class SearchPage {
 
-    @FindBy(id = "twotabsearchtextbox")
+    @FindBy(css = "[id='twotabsearchtextbox']")
     public WebElement searchBox;
     @FindBy(id = "nav-search-submit-button")
     public WebElement searchButton;
@@ -42,13 +42,13 @@ public class SearchPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         random = new Random();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         log = Logger.getLogger(getClass().getName());
         this.source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     }
 
     public boolean verifyNewPageLoading(String preUrl) {
-        wait.until(ExpectedConditions.visibilityOfAllElements(logo));
+        wait.until(ExpectedConditions.visibilityOfAllElements(logo)); 
         return !preUrl.equals(driver.getCurrentUrl());
     }
 
