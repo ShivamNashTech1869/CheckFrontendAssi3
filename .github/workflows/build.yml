@@ -32,4 +32,6 @@ jobs:
         run: mvn clean package
 
       - name: Run Selenium Tests
-        run: mvn test -DsearchProductID="${{ env.searchProductID }}"
+        run: |
+          cd Validate\ Elements\ On\ An\ Amazon
+          mvn test -DsearchProductID="${{ env.searchProductID }}"
