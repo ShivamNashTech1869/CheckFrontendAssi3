@@ -5,13 +5,13 @@ Feature: Search
     When  I open the product page for specified productId
     Then  I should see the Buy Now button
 
-  @Search1
+  @Search
   Scenario: Check customer ratings is over 4
     Given I am able to search specified productId
     When  I open the product page for specified productId
     Then  I should check if customer rating for the product is over four
 
-  @Search1
+  @Search
   Scenario: Get all the offer details
     Given I am able to search specified productId
     When  I open the product page for specified productId
