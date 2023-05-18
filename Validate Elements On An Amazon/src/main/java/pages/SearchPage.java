@@ -48,8 +48,7 @@ public class SearchPage {
     }
 
     public boolean verifyNewPageLoading(String preUrl) {
-        wait.until(ExpectedConditions.visibilityOf(searchBox));
-        return !preUrl.equals(driver.getCurrentUrl());
+       return !preUrl.equals(driver.getCurrentUrl());
     }
 
    public boolean searchByProductID() {
