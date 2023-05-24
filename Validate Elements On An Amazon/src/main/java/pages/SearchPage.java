@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class SearchPage {
 
-    @FindBy(css = "[id='twotabsearchtextbox']")
+    @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;
     @FindBy(id = "nav-search-submit-button")
     public WebElement searchButton;
@@ -48,7 +48,8 @@ public class SearchPage {
     }
 
     public boolean verifyNewPageLoading(String preUrl) {
-       return !preUrl.equals(driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(logo));
+        return !preUrl.equals(driver.getCurrentUrl());
     }
 
    public boolean searchByProductID() {
